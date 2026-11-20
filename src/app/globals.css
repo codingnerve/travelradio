@@ -1,26 +1,154 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ------------------------------------------------------------------
+   TravelStation design tokens
+   Navy carries structure and headings; ivory carries large content
+   areas; teal and orange are reserved for actions and small accents.
+------------------------------------------------------------------- */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-navy: #172d43;
+  --color-navy-2: #243e56;
+  --color-navy-3: #34506a;
+  --color-ivory: #faf8f3;
+  --color-sand: #efeadf;
+  --color-mist: #f3f5f6;
+  --color-teal: #507d7a;
+  --color-teal-deep: #3b625f;
+  --color-orange: #d77c42;
+  --color-orange-deep: #b9632d;
+  --color-ink: #536170;
+  --color-line: #dde3e8;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  --shadow-panel: 0 1px 0 rgba(23, 45, 67, 0.04), 0 18px 40px -18px rgba(23, 45, 67, 0.35);
+  --shadow-card: 0 1px 2px rgba(23, 45, 67, 0.06), 0 8px 24px -12px rgba(23, 45, 67, 0.18);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  color: var(--color-navy);
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+[id] {
+  scroll-margin-top: 6.5rem;
+}
+
+::selection {
+  background: var(--color-orange);
+  color: var(--color-navy);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Form controls
+------------------------------------------------------------------- */
+@layer components {
+  .field-label {
+    display: block;
+    margin-bottom: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-navy-2);
+  }
+
+  .field-control {
+    width: 100%;
+    min-height: 3rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+    background: #fff;
+    padding: 0.625rem 0.875rem;
+    font-size: 0.9375rem;
+    color: var(--color-navy);
+    transition:
+      border-color 0.15s ease,
+      box-shadow 0.15s ease;
+  }
+  .field-control::placeholder {
+    color: #8c98a4;
+  }
+  .field-control:hover {
+    border-color: #b8c3cc;
+  }
+  .field-control:focus {
+    outline: none;
+    border-color: var(--color-teal);
+    box-shadow: 0 0 0 3px rgba(80, 125, 122, 0.22);
+  }
+  .field-control[aria-invalid="true"] {
+    border-color: #b3261e;
+    box-shadow: 0 0 0 3px rgba(179, 38, 30, 0.1);
+  }
+  select.field-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23536170' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    padding-right: 2.25rem;
+  }
+  textarea.field-control {
+    min-height: 7.5rem;
+    resize: vertical;
+  }
+}
+
+/* A fine rule used as a recurring editorial motif */
+.rule-accent {
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  background: var(--color-orange);
 }
