@@ -19,7 +19,7 @@ export default function TermsPage() {
         {
           heading: "About our service",
           body: [
-            `${company.tradingName} is an independent travel assistance service. Through this website you can send enquiries about flights, hotels, car rentals, existing bookings and radio services support. Enquiries are handled by our customer support team.`,
+            `${company.tradingName} is an independent travel assistance service. Through this website you can send enquiries about flights, existing bookings and radio services support. Enquiries are handled by our customer support team.`,
             "This website does not display live fares or availability, does not take payments and does not issue tickets, reservations or rentals. An enquiry is a request for assistance, not a booking.",
           ],
         },

@@ -5,7 +5,11 @@ import { consentDefault, SelectField, TextAreaField } from "./fields";
 import { FormGroup, FormShell } from "./FormShell";
 import { useEnquiryForm } from "./useEnquiryForm";
 
-const topicOptions = Object.entries(generalTopicLabels).map(([value, label]) => ({ value, label }));
+// Hotels and car rentals are hidden for now; the schema still accepts them so they can be re-enabled.
+const hiddenTopics = ["hotel", "car"];
+const topicOptions = Object.entries(generalTopicLabels)
+  .filter(([value]) => !hiddenTopics.includes(value))
+  .map(([value, label]) => ({ value, label }));
 
 export function GeneralEnquiryForm() {
   const f = useEnquiryForm({

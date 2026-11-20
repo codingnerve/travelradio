@@ -12,7 +12,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "About Us",
   description:
-    "TravelStation is an independent travel assistance service for flights, hotels, car rentals and booking support, operated by TravelOpedia Ltd.",
+    "TravelStation is an independent travel assistance service for flights and booking support, operated by TravelOpedia Ltd.",
   path: "/about",
 });
 
@@ -26,7 +26,7 @@ export default function AboutPage() {
         imagePosition="50% 40%"
         crumbs={[{ label: "About Us" }]}
       >
-        TravelStation helps people with the practical side of travel: flights, hotels, car rentals
+        TravelStation helps people with the practical side of travel: flights
         and support when plans change.
       </PageHero>
 
@@ -39,7 +39,7 @@ export default function AboutPage() {
       >
         <p>
           TravelStation is an independent travel service provider. We help travellers explore
-          options for flights, hotels and car rentals, and we support people who need help with an
+          options for flights, and we support people who need help with an
           existing booking.
         </p>
         <p>
@@ -67,8 +67,6 @@ export default function AboutPage() {
             <dl className="divide-y divide-line border-y border-line">
               {[
                 ["Flights", "Domestic and international flight booking assistance, plus help with changes and cancellations."],
-                ["Hotels", "Hotel reservation and accommodation assistance for destinations worldwide."],
-                ["Car rentals", "Vehicle rental arrangements, from airport pickups to longer rentals."],
                 ["Travel assistance", "Help with existing bookings, including date changes, refunds and passenger detail corrections."],
                 ["Radio services", "Independent support for satellite radio activation, signal and subscriptions."],
               ].map(([t, d]) => (

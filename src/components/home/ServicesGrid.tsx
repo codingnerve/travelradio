@@ -1,4 +1,4 @@
-import { ArrowRight, CarFront, Hotel, Plane, Radio } from "lucide-react";
+import { ArrowRight, Plane, Radio } from "lucide-react";
 import Link from "next/link";
 import { Container, Section } from "@/components/shared/Container";
 import { Photo } from "@/components/shared/Photo";
@@ -16,22 +16,6 @@ const services = [
     position: "70% 50%",
   },
   {
-    title: "Hotels",
-    text: "Hotel reservations and accommodation assistance worldwide.",
-    href: "/hotels",
-    icon: Hotel,
-    image: images.hotelResort,
-    position: "50% 50%",
-  },
-  {
-    title: "Car Rentals",
-    text: "Convenient vehicle rental arrangements for different travel requirements.",
-    href: "/car-rentals",
-    icon: CarFront,
-    image: images.carSuv,
-    position: "55% 50%",
-  },
-  {
     title: "Radio Services",
     text: "Assistance with satellite radio activation, signal issues and subscriptions.",
     href: "/radio-services",
@@ -46,11 +30,11 @@ export function ServicesGrid() {
     <Section tone="ivory" labelledBy="services-title">
       <Container>
         <SectionHeading eyebrow="Our travel services" title="Everything You Need for Your Next Journey" id="services-title">
-          One team for the practical parts of travel, from the flight to the stay to the drive
-          from the airport.
+          One team for the practical parts of travel, from the flight to the practical
+          support around it.
         </SectionHeading>
 
-        <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-12 grid gap-5 sm:grid-cols-2">
           {services.map((s, i) => (
             <li key={s.title}>
               <Reveal delay={i * 0.08} className="h-full">

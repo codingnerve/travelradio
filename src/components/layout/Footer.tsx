@@ -53,7 +53,7 @@ export function Footer() {
         <div>
           <Logo light />
           <p className="mt-5 max-w-xs text-[0.95rem] leading-relaxed text-white/70">
-            Your travel assistance partner for flights, hotels, car rentals and travel-related
+            Your travel assistance partner for flights and travel-related
             services.
           </p>
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/55">

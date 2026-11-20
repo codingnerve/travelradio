@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "TravelStation — travel assistance for flights, hotels and car rentals";
+export const alt = "TravelStation — travel assistance for flights and booking support";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -35,7 +35,7 @@ export default function OpengraphImage() {
             Your journey deserves a better travel experience.
           </div>
           <div style={{ fontSize: 28, color: "#c5d0da", marginTop: 24 }}>
-            Flights · Hotels · Car rentals · 24/7 customer support
+            Flights · Booking help · 24/7 customer support
           </div>
         </div>
       </div>

@@ -35,8 +35,8 @@ export default function ContactPage() {
           <div className="grid gap-12 lg:grid-cols-[1.3fr_0.7fr] lg:gap-16">
             <div>
               <SectionHeading eyebrow="Send a message" title="How can we help?" id="contact-title">
-                Use this form for general questions. For flights, hotels or car rentals, the enquiry
-                forms on those pages collect the details we need.
+                Use this form for general questions. For flights, the enquiry
+                form on that page collects the details we need.
               </SectionHeading>
               <div className="mt-9 rounded-md border border-line bg-white p-5 shadow-card sm:p-8">
                 <GeneralEnquiryForm />

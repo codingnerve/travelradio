@@ -44,3 +44,6 @@ next-env.d.ts
 # local dev enquiry store
 .data/
 .playwright-mcp/
+
+.vercel
+.env*

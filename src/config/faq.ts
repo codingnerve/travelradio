@@ -16,14 +16,6 @@ export const generalFaqs: Faq[] = [
     a: "Yes. You can send an enquiry for international one-way, return or multi-city journeys. Availability and fares depend on your route and dates, and our team will discuss them with you directly. No fares are shown on this website.",
   },
   {
-    q: "Do you assist with hotel reservations?",
-    a: "Yes. Send a hotel enquiry with your destination, dates and the number of guests and rooms. Our team will come back to you with the accommodation options they can help arrange.",
-  },
-  {
-    q: "Can I request a car rental?",
-    a: "Yes. Tell us your pickup location, dates and the type of vehicle you are interested in using the car rental enquiry form. Our team will contact you to discuss the options.",
-  },
-  {
     q: "How can I change my existing booking?",
     a: "Use the Manage Booking page, choose the type of change you need and include your booking reference if you have one. Change and cancellation options depend on the fare rules and the supplier of your booking, and our team will explain what is possible. This site does not retrieve booking details automatically.",
   },
@@ -37,7 +29,7 @@ export const generalFaqs: Faq[] = [
   },
   {
     q: "How do I submit a travel enquiry?",
-    a: "Choose the relevant form, such as flights, hotels, car rentals or general enquiry, complete the required fields and submit it. You will see a confirmation with a reference number, and our team will follow up using the contact details you provided.",
+    a: "Choose the relevant form, such as flights, booking help or general enquiry, complete the required fields and submit it. You will see a confirmation with a reference number, and our team will follow up using the contact details you provided.",
   },
 ];
 

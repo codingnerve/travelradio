@@ -12,7 +12,7 @@ const benefits = [
   {
     icon: Ticket,
     title: "Convenient Booking Support",
-    text: "Flights, hotels and car rentals can all be raised in one conversation, with help available if your plans change later.",
+    text: "Flight enquiries and booking questions can all be raised in one conversation, with help available if your plans change later.",
   },
   {
     icon: Globe2,

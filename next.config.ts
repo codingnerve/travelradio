@@ -37,6 +37,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Hotels and car rentals are hidden for now. Remove these redirects (and restore the
+  // nav, home sections and sitemap entries) to bring them back.
+  async redirects() {
+    return [
+      { source: "/hotels", destination: "/", permanent: false },
+      { source: "/car-rentals", destination: "/", permanent: false },
+    ];
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },

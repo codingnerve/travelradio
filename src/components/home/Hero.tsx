@@ -17,7 +17,7 @@ export function Hero() {
 
       <Container className="relative pb-0 pt-12 sm:pt-16 lg:pt-16">
         <div className="max-w-[44rem]">
-          <Eyebrow light>Flights · Hotels · Car rentals · Support</Eyebrow>
+          <Eyebrow light>Flights · Booking help · Support</Eyebrow>
           <h1
             id="hero-title"
             className="mt-5 text-[2.3rem] font-extrabold leading-[1.06] !text-white sm:text-5xl lg:text-[3.6rem]"

@@ -24,7 +24,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Travel assistance for flights, hotels and car rentals`,
+    default: `${site.name} — Travel assistance for flights and booking support`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "TravelStation — travel assistance for flights, hotels and car rentals",
+        alt: "TravelStation — travel assistance for flights and booking support",
       },
     ],
   },

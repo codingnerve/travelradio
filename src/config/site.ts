@@ -4,9 +4,9 @@ export const site = {
     /\/$/,
     "",
   ),
-  tagline: "Travel assistance for flights, hotels, car rentals and more",
+  tagline: "Travel assistance for flights, booking support and more",
   description:
-    "TravelStation is an independent travel assistance service. Send an enquiry for flights, hotels, car rentals and booking support, or speak with our customer support team.",
+    "TravelStation is an independent travel assistance service. Send an enquiry for flights and booking support, or speak with our customer support team.",
   locale: "en_GB",
 } as const;
 
@@ -42,54 +42,10 @@ export const mainNav: NavItem[] = [
     ],
   },
   {
-    label: "Hotels",
-    href: "/hotels",
-    children: [
-      {
-        label: "Hotel Enquiry",
-        href: "/hotels#enquiry",
-        description: "Tell us where and when you are travelling",
-      },
-      {
-        label: "Destinations",
-        href: "/hotels#destinations",
-        description: "Cities our team is often asked about",
-      },
-      {
-        label: "Accommodation Types",
-        href: "/hotels#stay-types",
-        description: "City hotels, resorts, apartments and more",
-      },
-    ],
-  },
-  {
-    label: "Car Rentals",
-    href: "/car-rentals",
-    children: [
-      {
-        label: "Car Rental Enquiry",
-        href: "/car-rentals#enquiry",
-        description: "Airport or city pickup requests",
-      },
-      {
-        label: "Airport Rentals",
-        href: "/car-rentals#airport",
-        description: "Arrive, collect, drive",
-      },
-      {
-        label: "Vehicle Categories",
-        href: "/car-rentals#categories",
-        description: "Economy, SUV, luxury and premium",
-      },
-    ],
-  },
-  {
     label: "Travel Services",
     href: "/travel-services",
     children: [
       { label: "Flight Bookings", href: "/travel-services#flights" },
-      { label: "Hotel Reservations", href: "/travel-services#hotels" },
-      { label: "Car Rentals", href: "/travel-services#car-rentals" },
       { label: "Travel Assistance", href: "/travel-services#assistance" },
       { label: "Radio Services", href: "/travel-services#radio" },
     ],
@@ -130,8 +86,6 @@ export const footerQuickLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Flights", href: "/flights" },
-  { label: "Hotels", href: "/hotels" },
-  { label: "Car Rentals", href: "/car-rentals" },
   { label: "Travel Services", href: "/travel-services" },
   { label: "Contact Us", href: "/contact" },
 ];

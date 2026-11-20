@@ -11,7 +11,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Travel Services",
   description:
-    "Flight bookings, hotel reservations, car rentals, travel assistance and radio services support, all handled through one customer support team at TravelStation.",
+    "Flight bookings, travel assistance and radio services support, all handled through one customer support team at TravelStation.",
   path: "/travel-services",
 });
 
@@ -36,7 +36,7 @@ export default function TravelServicesPage() {
         imagePosition="50% 50%"
         crumbs={[{ label: "Travel Services" }]}
       >
-        Flights, hotels, car rentals and the practical support that surrounds them. Every service
+        Flights and the practical support that surrounds them. Every service
         starts with an enquiry and a conversation with our customer support team.
       </PageHero>
 
@@ -46,8 +46,6 @@ export default function TravelServicesPage() {
           <ul className="flex flex-wrap gap-x-8 gap-y-3 font-display text-sm font-bold text-navy">
             {[
               ["Flight bookings", "#flights"],
-              ["Hotel reservations", "#hotels"],
-              ["Car rentals", "#car-rentals"],
               ["Travel assistance", "#assistance"],
               ["Radio services", "#radio"],
             ].map(([l, h]) => (
@@ -72,33 +70,8 @@ export default function TravelServicesPage() {
       </Split>
 
       <Split
-        id="hotels"
-        eyebrow="02 · Hotel reservations"
-        title="Accommodation worldwide."
-        image={images.hotelResort}
-        flip
-        tone="ivory"
-        actions={<ButtonLink href="/hotels#enquiry">Enquire About Hotels</ButtonLink>}
-      >
-        <p>From city hotels to resorts and apartments, we help with reservation enquiries for the places you are going.</p>
-        {bullets(["City hotels, resorts, boutique stays and apartments", "Room, guest and date requirements taken into account", "Support if your plans change"])}
-      </Split>
-
-      <Split
-        id="car-rentals"
-        eyebrow="03 · Car rentals"
-        title="Wheels for when you land."
-        image={images.carSuv}
-        tone="white"
-        actions={<ButtonLink href="/car-rentals#enquiry">Explore Car Rentals</ButtonLink>}
-      >
-        <p>Convenient vehicle rental arrangements for different travel requirements, from airport pickups to longer stays.</p>
-        {bullets(["Economy, SUV, premium and luxury categories", "Airport and city pickups", "Short-term and long-term rentals"])}
-      </Split>
-
-      <Split
         id="assistance"
-        eyebrow="04 · Travel assistance"
+        eyebrow="02 · Travel assistance"
         title="Help when you need it most."
         image={images.lounge}
         imagePosition="72% 30%"
@@ -112,7 +85,7 @@ export default function TravelServicesPage() {
 
       <Split
         id="radio"
-        eyebrow="05 · Radio services"
+        eyebrow="03 · Radio services"
         title="Support for satellite radio."
         image={images.radioMic}
         tone="white"

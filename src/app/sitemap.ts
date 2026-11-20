@@ -4,8 +4,6 @@ import { site } from "@/config/site";
 const routes: { path: string; priority: number; changeFrequency: "weekly" | "monthly" | "yearly" }[] = [
   { path: "/", priority: 1, changeFrequency: "weekly" },
   { path: "/flights", priority: 0.9, changeFrequency: "monthly" },
-  { path: "/hotels", priority: 0.9, changeFrequency: "monthly" },
-  { path: "/car-rentals", priority: 0.9, changeFrequency: "monthly" },
   { path: "/travel-services", priority: 0.8, changeFrequency: "monthly" },
   { path: "/radio-services", priority: 0.7, changeFrequency: "monthly" },
   { path: "/manage-booking", priority: 0.8, changeFrequency: "monthly" },

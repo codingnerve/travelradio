@@ -4,21 +4,19 @@ import { JsonLd } from "@/components/shared/JsonLd";
 import { PageHero } from "@/components/shared/PageHero";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { SupportBand } from "@/components/support/SupportBand";
-import { carFaqs, flightFaqs, generalFaqs, hotelFaqs, radioFaqs } from "@/config/faq";
+import { flightFaqs, generalFaqs, radioFaqs } from "@/config/faq";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Frequently Asked Questions",
   description:
-    "Answers to common questions about TravelStation's flight, hotel, car rental and radio services enquiry service, and how to contact customer support.",
+    "Answers to common questions about TravelStation's flight and radio services enquiry service, and how to contact customer support.",
   path: "/faq",
 });
 
 const groups = [
   { id: "general", title: "General", items: generalFaqs },
   { id: "flights", title: "Flights", items: flightFaqs },
-  { id: "hotels", title: "Hotels", items: hotelFaqs },
-  { id: "car-rentals", title: "Car rentals", items: carFaqs },
   { id: "radio", title: "Radio services", items: radioFaqs },
 ];
 
