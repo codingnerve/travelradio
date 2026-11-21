@@ -49,9 +49,9 @@ export const images = {
   ),
 
   // Destinations
-  london: u("1513635269975-59663e0ac1ad", "Aerial view of the River Thames and Tower Bridge in London"),
-  newYork: u("1496442226666-8d4d0e62e6e9", "A New York City street canyon at sunset"),
-  dubai: u("1512453979798-5ea266f8880c", "The Dubai skyline at dusk"),
+  london: u("1529655683826-aba9b3e77383", "Big Ben and the Houses of Parliament at sunset"),
+  newYork: u("1485871981521-5b1fd3805eee", "The Manhattan skyline glowing orange at sunset"),
+  dubai: u("1512453979798-5ea266f8880c", "The Dubai skyline and Burj Khalifa at dusk"),
   paris: u("1502602898657-3e91760cbb34", "The Eiffel Tower and the River Seine in Paris"),
   singapore: u("1525625293386-3f8f99389edd", "Aerial view of Marina Bay in Singapore"),
   toronto: u("1507992781348-310259076fe0", "The Toronto skyline and CN Tower across the water at sunset"),
@@ -81,7 +81,6 @@ export const images = {
   carPremium: u("1502877338535-766e1452684a", "A blue coupe parked on a city street"),
   carLuxury: u("1503376780353-7e6692767b70", "A black luxury saloon driving on a city road"),
 
-  // Support + radio
+  // Support
   support: u("1553775282-20af80779df7", "A customer-support headset on a desk beside a laptop"),
-  radioMic: u("1478737270239-2f02b77fc618", "A studio microphone in a dark recording room"),
 } satisfies Record<string, Img>;

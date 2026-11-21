@@ -1,30 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Roboto } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
-import { StickyCallBar } from "@/components/layout/StickyCallBar";
-import { TopBar } from "@/components/layout/TopBar";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { company, contact } from "@/config/contact";
 import { site } from "@/config/site";
 import "./globals.css";
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
+  weight: ["400", "500", "700"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Travel assistance for flights and booking support`,
+    default: `${site.name} — ${site.tagline}`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -33,7 +26,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: site.name,
     locale: site.locale,
-    title: `${site.name} — Travel assistance`,
+    title: `${site.name} — ${site.tagline}`,
     description: site.description,
     url: "/",
     images: [
@@ -41,7 +34,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "TravelStation — travel assistance for flights and booking support",
+        alt: `${site.name} — ${site.tagline}`,
       },
     ],
   },
@@ -51,7 +44,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#172D43",
+  themeColor: "#1a2b3c",
   width: "device-width",
   initialScale: 1,
 };
@@ -77,7 +70,6 @@ const organizationLd = {
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "customer support",
-        telephone: contact.phoneDisplay.replace(/[^\d+]/g, ""),
         email: contact.email,
         availableLanguage: ["English"],
       },
@@ -94,7 +86,7 @@ const organizationLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en-GB" data-scroll-behavior="smooth" className={`${manrope.variable} ${inter.variable} antialiased`}>
+    <html lang="en-GB" data-scroll-behavior="smooth" className={`${roboto.variable} antialiased`}>
       <body className="flex min-h-dvh flex-col">
         <a
           href="#main"
@@ -102,14 +94,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Skip to main content
         </a>
-        <TopBar />
         <Header />
         <main id="main" className="flex-1">
           {children}
         </main>
         <Footer />
-        <div className="h-[4.5rem] bg-navy md:hidden" aria-hidden />
-        <StickyCallBar />
         <JsonLd data={organizationLd} />
       </body>
     </html>

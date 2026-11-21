@@ -5,7 +5,7 @@ import { Confirmation } from "./Confirmation";
 
 export const metadata: Metadata = {
   title: "Enquiry received",
-  description: "Your enquiry has been sent to the TravelStation customer support team.",
+  description: "Your enquiry has been sent to the Travel Station customer support team.",
   robots: { index: false, follow: false },
 };
 

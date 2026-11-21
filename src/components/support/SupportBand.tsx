@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { contact } from "@/config/contact";
 import { images } from "@/config/images";
 
-/** Deep-navy customer support section, in the spirit of the RadioTravoAssist site. */
+/** Deep-navy customer support section. */
 export function SupportBand({
   title = "Need Assistance? We're Just a Call Away.",
   text = "Whether you're planning a journey or need help with an existing travel arrangement, our customer support team is here to assist.",

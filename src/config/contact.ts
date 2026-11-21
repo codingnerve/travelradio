@@ -1,10 +1,9 @@
 /**
  * Centralised business, contact and legal information.
  *
- * IMPORTANT: The company details below were taken from the supplied
- * RadioTravoAssist reference. Confirm with the business owner that they are
- * authorised for use on TravelStation before publishing, and confirm the exact
- * legal-entity / trading-name relationship.
+ * IMPORTANT: Confirm with the business owner that the company details below
+ * are authorised for use on Travel Station before publishing, and confirm the
+ * exact legal-entity / trading-name relationship.
  *
  * Phone and email can be overridden per environment with
  * NEXT_PUBLIC_SUPPORT_PHONE_DISPLAY, NEXT_PUBLIC_SUPPORT_PHONE_TEL and
@@ -15,7 +14,7 @@ const phoneDisplay =
   process.env.NEXT_PUBLIC_SUPPORT_PHONE_DISPLAY ?? "+1 (833) 595-1923";
 const phoneTel = process.env.NEXT_PUBLIC_SUPPORT_PHONE_TEL ?? "+18335951923";
 const email =
-  process.env.NEXT_PUBLIC_SUPPORT_EMAIL ?? "radioservices@travelstation.world";
+  process.env.NEXT_PUBLIC_SUPPORT_EMAIL ?? "customercare@travelstation.world";
 
 export const contact = {
   phoneDisplay,
@@ -29,7 +28,7 @@ export const contact = {
 
 export const company = {
   legalName: "TravelOpedia Ltd.",
-  tradingName: "TravelStation",
+  tradingName: "Travel Station",
   registrationNumber: "08168135",
   vatNumber: "199172856",
   addressLines: [

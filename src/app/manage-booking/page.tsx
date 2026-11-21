@@ -14,7 +14,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Manage Booking",
   description:
-    "Need help with an existing booking? Ask TravelStation's customer support team about flight changes, cancellations, refunds and passenger detail corrections.",
+    "Need help with an existing booking? Ask Travel Station's customer support team about flight changes, cancellations, refunds and passenger detail corrections.",
   path: "/manage-booking",
 });
 

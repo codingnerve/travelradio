@@ -25,7 +25,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Flight Booking Assistance",
   description:
-    "Send a one-way, round-trip or multi-city flight enquiry to TravelStation. Our customer support team helps with domestic and international flights, changes and cancellations.",
+    "Send a one-way, round-trip or multi-city flight enquiry to Travel Station. Our customer support team helps with domestic and international flights, changes and cancellations.",
   path: "/flights",
 });
 
@@ -187,7 +187,7 @@ export default function FlightsPage() {
                 ))}
               </ul>
               <p className="mt-6 max-w-2xl border-l-2 border-orange pl-4 text-[0.88rem] leading-relaxed">
-                Airline names are shown as plain text for identification only. TravelStation is an
+                Airline names are shown as plain text for identification only. Travel Station is an
                 independent third-party travel service provider and is not affiliated with or
                 endorsed by any airline. Availability depends on route, date and fare conditions.
               </p>

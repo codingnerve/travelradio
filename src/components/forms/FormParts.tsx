@@ -1,6 +1,6 @@
 "use client";
 
-import { AlertTriangle, CheckCircle2, Loader2, Phone } from "lucide-react";
+import { AlertTriangle, CheckCircle2, Loader2, Mail } from "lucide-react";
 import type { RefObject } from "react";
 import { contact } from "@/config/contact";
 import { Button } from "@/components/shared/Button";
@@ -28,9 +28,9 @@ export function ServerError({ message }: { message: string | null }) {
       <div>
         <p>{message}</p>
         <p className="mt-1">
-          You can also call us on{" "}
-          <a href={contact.phoneHref} className="font-semibold underline">
-            {contact.phoneDisplay}
+          You can also email us at{" "}
+          <a href={contact.emailHref} className="font-semibold underline">
+            {contact.email}
           </a>
           .
         </p>
@@ -81,15 +81,14 @@ export function SuccessPanel({
       )}
       <p className="mt-4 max-w-prose text-[0.95rem] leading-relaxed">
         Our customer support team will review your request and contact you using the details you
-        provided. This is an enquiry only — nothing has been booked, ticketed or charged. If it is
-        urgent, call us 24/7.
+        provided. This is an enquiry only — nothing has been booked, ticketed or charged.
       </p>
       <div className="mt-5 flex flex-wrap items-center gap-3">
         <a
-          href={contact.phoneHref}
-          className="inline-flex h-11 items-center gap-2 rounded-md bg-navy px-5 text-sm font-semibold text-white hover:bg-navy-2"
+          href={contact.emailHref}
+          className="inline-flex h-11 items-center gap-2 rounded-lg bg-navy px-5 text-sm font-semibold text-white hover:bg-navy-2"
         >
-          <Phone className="h-4 w-4" aria-hidden /> {contact.phoneDisplay}
+          <Mail className="h-4 w-4" aria-hidden /> {contact.email}
         </a>
         <button
           type="button"

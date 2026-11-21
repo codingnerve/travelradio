@@ -37,12 +37,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Hotels and car rentals are hidden for now. Remove these redirects (and restore the
-  // nav, home sections and sitemap entries) to bring them back.
+  // Everything outside the home page, the policy pages, About, Contact and Car Rental is
+  // hidden for now. The page code is kept: delete a redirect here (and add the page back to
+  // the nav and sitemap in src/config/site.ts / src/app/sitemap.ts) to bring it back.
   async redirects() {
+    const hidden = ["/flights", "/hotels", "/travel-services", "/faq", "/manage-booking", "/disclaimer"];
     return [
-      { source: "/hotels", destination: "/", permanent: false },
-      { source: "/car-rentals", destination: "/", permanent: false },
+      ...hidden.map((source) => ({ source, destination: "/", permanent: false })),
+      { source: "/radio-services", destination: "/", permanent: false },
+      { source: "/cancellation-policy", destination: "/refund-policy", permanent: false },
     ];
   },
   async headers() {

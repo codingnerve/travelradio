@@ -9,7 +9,6 @@ export const ENQUIRY_TYPES = [
   "flight",
   "hotel",
   "car-rental",
-  "radio-support",
   "booking-modification",
   "cancellation",
   "general",
@@ -20,7 +19,6 @@ export const enquiryTypeLabels: Record<EnquiryType, string> = {
   flight: "Flight Enquiry",
   hotel: "Hotel Enquiry",
   "car-rental": "Car Rental Enquiry",
-  "radio-support": "Radio Support",
   "booking-modification": "Booking Modification",
   cancellation: "Cancellation",
   general: "General Enquiry",
@@ -235,26 +233,6 @@ export const carDetails = z
     }
   });
 
-export const radioIssueTypes = [
-  "activation",
-  "signal",
-  "missing-channels",
-  "subscription",
-  "other",
-] as const;
-export const radioIssueLabels: Record<(typeof radioIssueTypes)[number], string> = {
-  activation: "Radio activation",
-  signal: "Signal or reception problem",
-  "missing-channels": "Missing channels",
-  subscription: "Subscription enquiry",
-  other: "Something else",
-};
-
-export const radioDetails = z.object({
-  issueType: z.enum(radioIssueTypes),
-  vehicleOrDevice: z.string().trim().max(120, "That looks too long"),
-});
-
 export const bookingCategories = [
   "new-booking",
   "flight-change",
@@ -296,13 +274,14 @@ export const bookingDetails = z.object({
 });
 
 export const generalDetails = z.object({
-  topic: z.enum(["travel", "hotel", "car", "radio", "other"]),
+  topic: z.enum(["travel", "hotel", "car", "other"]),
+  /** Free-text subject line from the contact page. */
+  subject: z.string().trim().max(120, "Please keep the subject under 120 characters").optional(),
 });
 export const generalTopicLabels = {
   travel: "Flights or travel planning",
   hotel: "Hotels",
   car: "Car rentals",
-  radio: "Radio services",
   other: "Something else",
 } as const;
 
@@ -325,11 +304,6 @@ export const carForm = z.object({
   message: optionalMessage,
   details: carDetails,
 });
-export const radioForm = z.object({
-  ...contactFields,
-  message: requiredMessage,
-  details: radioDetails,
-});
 export const bookingForm = z.object({
   ...contactFields,
   message: requiredMessage,
@@ -344,7 +318,6 @@ export const generalForm = z.object({
 export type FlightFormValues = z.infer<typeof flightForm>;
 export type HotelFormValues = z.infer<typeof hotelForm>;
 export type CarFormValues = z.infer<typeof carForm>;
-export type RadioFormValues = z.infer<typeof radioForm>;
 export type BookingFormValues = z.infer<typeof bookingForm>;
 export type GeneralFormValues = z.infer<typeof generalForm>;
 
@@ -369,7 +342,6 @@ export const enquiryPayloadSchema = z.discriminatedUnion("type", [
   flightForm.extend({ type: z.literal("flight"), ...meta }),
   hotelForm.extend({ type: z.literal("hotel"), ...meta }),
   carForm.extend({ type: z.literal("car-rental"), ...meta }),
-  radioForm.extend({ type: z.literal("radio-support"), ...meta }),
   bookingForm.extend({ type: z.literal("booking-modification"), ...meta }),
   bookingForm.extend({ type: z.literal("cancellation"), ...meta }),
   generalForm.extend({ type: z.literal("general"), ...meta }),

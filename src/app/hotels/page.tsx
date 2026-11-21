@@ -20,7 +20,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Hotel Reservation Assistance",
   description:
-    "Enquire about hotels and accommodation worldwide. TravelStation's customer support team helps with hotel reservation enquiries for city breaks, resorts and longer stays.",
+    "Enquire about hotels and accommodation worldwide. Travel Station's customer support team helps with hotel reservation enquiries for city breaks, resorts and longer stays.",
   path: "/hotels",
 });
 

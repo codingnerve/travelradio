@@ -1,35 +1,38 @@
+import { Plane } from "lucide-react";
 import Link from "next/link";
 
-/** Original wordmark: a route arc leaving a waypoint, set in a navy tile. */
-export function LogoMark({ className = "h-9 w-9" }: { className?: string }) {
+/** Round plane badge. Navy on white backgrounds, orange on the dark footer. */
+export function LogoMark({
+  className = "h-[50px] w-[50px]",
+  tone = "navy",
+}: {
+  className?: string;
+  tone?: "navy" | "orange";
+}) {
   return (
-    <svg viewBox="0 0 40 40" className={className} aria-hidden="true">
-      <rect width="40" height="40" rx="7" fill="#243e56" />
-      <path
-        d="M9 27c4-11 12-16 22-15"
-        fill="none"
-        stroke="#d77c42"
-        strokeWidth="2.4"
-        strokeLinecap="round"
-        strokeDasharray="0.1 5"
-      />
-      <path d="M26.5 8.5 33 12l-5.4 5" fill="none" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="10" cy="28" r="3.2" fill="#fff" />
-    </svg>
+    <span
+      aria-hidden
+      className={`flex shrink-0 items-center justify-center rounded-full text-white ${
+        tone === "navy" ? "bg-navy" : "bg-orange"
+      } ${className}`}
+    >
+      <Plane className="h-[46%] w-[46%]" strokeWidth={1.75} />
+    </span>
   );
 }
 
 export function Logo({ light = false }: { light?: boolean }) {
   return (
-    <Link href="/" className="group inline-flex items-center gap-2.5" aria-label="TravelStation home">
-      <LogoMark />
+    <Link href="/" className="inline-flex items-center gap-3" aria-label="Travel Station home">
+      {light ? <LogoMark className="h-[40px] w-[40px]" tone="orange" /> : <LogoMark />}
       <span
-        className={`font-display text-[1.3rem] leading-none tracking-tight ${
-          light ? "text-white" : "text-navy"
-        }`}
+        className={
+          light
+            ? "text-[1.3rem] font-bold leading-none text-white"
+            : "text-[1.65rem] font-bold leading-none tracking-tight text-navy"
+        }
       >
-        <span className="font-extrabold">Travel</span>
-        <span className="font-medium">Station</span>
+        Travel Station
       </span>
     </Link>
   );

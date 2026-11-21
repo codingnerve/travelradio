@@ -5,11 +5,10 @@ type Variant = "primary" | "secondary" | "outline" | "outline-light" | "teal" | 
 type Size = "md" | "lg";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-md font-semibold tracking-[0.01em] transition-[background-color,color,border-color,transform] duration-200 disabled:cursor-not-allowed disabled:opacity-60 active:translate-y-px whitespace-nowrap";
+  "inline-flex items-center justify-center gap-2 rounded-lg font-semibold tracking-[0.01em] transition-[background-color,color,border-color,transform] duration-200 disabled:cursor-not-allowed disabled:opacity-60 active:translate-y-px whitespace-nowrap";
 
 const variants: Record<Variant, string> = {
-  // Navy text on orange keeps contrast at AA; white text would not.
-  primary: "bg-orange text-navy hover:bg-[#e08a52]",
+  primary: "bg-orange text-white hover:bg-orange-deep",
   secondary: "bg-navy text-white hover:bg-navy-2",
   teal: "bg-teal text-white hover:bg-teal-deep",
   outline: "border border-navy/25 text-navy hover:border-navy hover:bg-navy hover:text-white",

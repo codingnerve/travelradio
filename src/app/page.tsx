@@ -1,36 +1,33 @@
 import type { Metadata } from "next";
-import { BookingAssistance } from "@/components/home/BookingAssistance";
-import { Destinations } from "@/components/home/Destinations";
-import { Experiences } from "@/components/home/Experiences";
-import { Hero } from "@/components/home/Hero";
-import { HowItWorks } from "@/components/home/HowItWorks";
-import { ServicesGrid } from "@/components/home/ServicesGrid";
-import { WhyChoose } from "@/components/home/WhyChoose";
-import { FaqSection } from "@/components/support/FaqSection";
-import { FinalCta } from "@/components/support/FinalCta";
-import { SupportBand } from "@/components/support/SupportBand";
-import { generalFaqs } from "@/config/faq";
+import { FeaturedHotels } from "@/components/landing/FeaturedHotels";
+import { KeyBenefits } from "@/components/landing/KeyBenefits";
+import { LandingHero } from "@/components/landing/LandingHero";
+import { PopularDestinations } from "@/components/landing/PopularDestinations";
+import { RadioContact } from "@/components/landing/RadioContact";
+import { RadioHelpline } from "@/components/landing/RadioHelpline";
+import { RadioSupport } from "@/components/landing/RadioSupport";
+import { ReadyToTravel } from "@/components/landing/ReadyToTravel";
+import { TravelSolutions } from "@/components/landing/TravelSolutions";
+import { site } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "TravelStation — Flight & Booking Assistance" },
-  description:
-    "Send a flight enquiry to TravelStation's customer support team, or get help with an existing booking. Telephone support 24/7.",
+  title: { absolute: `${site.name} World — ${site.tagline}` },
+  description: site.description,
   alternates: { canonical: "/" },
 };
 
 export default function HomePage() {
   return (
     <>
-      <Hero />
-      <Destinations />
-      <ServicesGrid />
-      <Experiences />
-      <WhyChoose />
-      <HowItWorks />
-      <BookingAssistance />
-      <SupportBand />
-      <FaqSection items={generalFaqs} />
-      <FinalCta />
+      <LandingHero />
+      <PopularDestinations />
+      <FeaturedHotels />
+      <TravelSolutions />
+      <KeyBenefits />
+      <ReadyToTravel />
+      <RadioSupport />
+      <RadioHelpline />
+      <RadioContact />
     </>
   );
 }

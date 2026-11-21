@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Cancellation Policy",
   description:
-    "How cancellations work when you enquire or book through TravelStation, and how to ask our customer support team for help.",
+    "How cancellations work when you enquire or book through Travel Station, and how to ask our customer support team for help.",
   path: "/cancellation-policy",
 });
 
@@ -13,7 +13,7 @@ export default function CancellationPolicyPage() {
     <LegalPage
       title="Cancellation Policy"
       path="/cancellation-policy"
-      intro="This page explains how cancellation requests are handled. Because TravelStation works through enquiries and third-party suppliers, the rules that apply depend on what you have arranged."
+      intro="This page explains how cancellation requests are handled. Because Travel Station works through enquiries and third-party suppliers, the rules that apply depend on what you have arranged."
       sections={[
         {
           heading: "Withdrawing an enquiry",

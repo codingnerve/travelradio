@@ -11,7 +11,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Travel Services",
   description:
-    "Flight bookings, travel assistance and radio services support, all handled through one customer support team at TravelStation.",
+    "Flight bookings and travel assistance, all handled through one customer support team at Travel Station.",
   path: "/travel-services",
 });
 
@@ -47,7 +47,6 @@ export default function TravelServicesPage() {
             {[
               ["Flight bookings", "#flights"],
               ["Travel assistance", "#assistance"],
-              ["Radio services", "#radio"],
             ].map(([l, h]) => (
               <li key={h}>
                 <a href={h} className="border-b-2 border-orange pb-1 hover:text-orange-deep">{l}</a>
@@ -81,18 +80,6 @@ export default function TravelServicesPage() {
       >
         <p>Already have a booking? Our team can help you understand your options when something changes or needs correcting.</p>
         {bullets(["Flight date changes and cancellation assistance", "Refund enquiries and passenger information corrections", "General booking questions"])}
-      </Split>
-
-      <Split
-        id="radio"
-        eyebrow="03 · Radio services"
-        title="Support for satellite radio."
-        image={images.radioMic}
-        tone="white"
-        actions={<ButtonLink href="/radio-services">About Radio Services</ButtonLink>}
-      >
-        <p>Independent support for satellite radio activation, signal and reception issues, missing channels and subscription questions.</p>
-        <p className="text-sm">This is an independent support service and is not affiliated with any satellite radio provider.</p>
       </Split>
 
       <Section tone="mist" labelledBy="ts-how">

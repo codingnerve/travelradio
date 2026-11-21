@@ -1,124 +1,102 @@
-import { CalendarRange, KeyRound, PlaneLanding, ShieldQuestion, Timer, UserCheck } from "lucide-react";
-import { CarRentalEnquiryForm } from "@/components/forms/CarRentalEnquiryForm";
-import { EnquirySection } from "@/components/forms/EnquirySection";
-import { FeatureSection, Split } from "@/components/shared/Blocks";
-import { ButtonLink } from "@/components/shared/Button";
-import { Container, Section } from "@/components/shared/Container";
-import { PageHero } from "@/components/shared/PageHero";
-import { Photo } from "@/components/shared/Photo";
-import { Reveal } from "@/components/shared/Reveal";
-import { SectionHeading } from "@/components/shared/SectionHeading";
-import { FaqSection } from "@/components/support/FaqSection";
-import { FinalCta } from "@/components/support/FinalCta";
-import { carFaqs } from "@/config/faq";
-import { images } from "@/config/images";
+import { Car, MapPin, ShieldCheck, type LucideIcon } from "lucide-react";
+import Link from "next/link";
+import { EmailCareButton } from "@/components/shared/EmailCareButton";
+import { PageBanner } from "@/components/shared/PageBanner";
+import { SectionTitle } from "@/components/landing/SectionTitle";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Car Rental Assistance",
+  title: "Premium Car Rentals",
   description:
-    "Enquire about airport and city car rentals. TravelStation's customer support team helps with economy, SUV, luxury and premium vehicle rental requests.",
+    "Premium car rentals with Travel Station: unlimited mileage, flexible pick-up at major airports and city centers, and 24/7 roadside assistance.",
   path: "/car-rentals",
 });
 
-const categories = [
-  { name: "Economy", text: "Compact and efficient. A sensible choice for city driving and solo or couple travel.", image: images.carEconomy },
-  { name: "SUV", text: "More room and a higher seating position for families, luggage and longer routes.", image: images.carSuv },
-  { name: "Premium", text: "A step up in comfort and refinement for business trips and special occasions.", image: images.carPremium },
-  { name: "Luxury", text: "High-end vehicles for when the drive is part of the occasion.", image: images.carLuxury },
+const perks: { title: string; text: string; icon: LucideIcon }[] = [
+  { title: "Unlimited Mileage", text: "On most rentals to give you total freedom.", icon: Car },
+  { title: "Flexible Pick-up", text: "Locations at all major airports and city centers.", icon: MapPin },
+  { title: "24/7 Roadside Assistance", text: "Drive with peace of mind.", icon: ShieldCheck },
+];
+
+const rates = [
+  { name: "Economy", model: "Toyota Yaris or similar", price: 29 },
+  { name: "Midsize SUV", model: "Hyundai Tucson or similar", price: 49 },
+  { name: "Luxury Sedan", model: "BMW 5 Series or similar", price: 89 },
+  { name: "Full-Size Van", model: "Chrysler Pacifica or similar", price: 69 },
 ];
 
 export default function CarRentalsPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Car rentals"
-        title="Your journey doesn't end at the airport."
-        image={images.carRoad}
-        imagePosition="50% 62%"
-        crumbs={[{ label: "Car Rentals" }]}
-        actions={<ButtonLink href="#enquiry" size="lg">Request a Rental</ButtonLink>}
-      >
-        Land, collect and go. Tell us where and when you need a vehicle, and our team will help
-        arrange a rental that fits your trip.
-      </PageHero>
+      <PageBanner title="Premium Car Rentals" subtitle="Drive Your Way" />
 
-      <EnquirySection
-        eyebrow="Car rental enquiry"
-        title="Tell us what you need on the road."
-        intro="Share your pickup, dates and the type of vehicle you have in mind. If you aren't sure yet, choose 'Not sure yet'."
-        points={[
-          "Your request goes to our customer support team.",
-          "We contact you to discuss the vehicle options available.",
-          "Nothing is reserved or charged until you have confirmed it with us.",
-        ]}
-      >
-        <CarRentalEnquiryForm />
-      </EnquirySection>
+      <div className="bg-white pb-20 pt-14 sm:pt-[72px]">
+        <div className="mx-auto max-w-[1520px] px-4 sm:px-8 lg:px-12">
+          <p className="mx-auto max-w-[62rem] text-center text-[1rem] leading-[1.85] text-[#6b7280] sm:text-[1.1rem]">
+            At Travel Station, we don&apos;t just get you to the airport; we get you to your final
+            destination. Whether you need a compact car for city driving, a luxury sedan for
+            business, or a spacious SUV for a family road trip, we offer competitive rates through
+            our global partners.
+          </p>
 
-      <Split
-        id="airport"
-        eyebrow="Airport rental assistance"
-        title="Arrive, collect, drive."
-        image={images.carDriver}
-        imagePosition="50% 40%"
-        tone="white"
-        actions={<ButtonLink href="#enquiry" variant="secondary">Enquire about airport pickup</ButtonLink>}
-      >
-        <p>
-          Airport collection is one of the most convenient ways to start a trip. Tell us your
-          arrival airport and, if you have it, your flight details, and we&apos;ll help look at
-          pickup options near the terminal.
-        </p>
-        <p>
-          Collection arrangements, opening hours and requirements vary by location and supplier, so
-          our team will explain what applies to your rental before you confirm.
-        </p>
-      </Split>
-
-      <Section id="categories" tone="ivory" labelledBy="cat-title">
-        <Container>
-          <SectionHeading eyebrow="Vehicle categories" title="Choose the kind of car that suits the journey." id="cat-title">
-            Four categories to start from. Availability depends on location and dates.
-          </SectionHeading>
-          <ul className="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-            {categories.map((c, i) => (
-              <li key={c.name}>
-                <Reveal delay={i * 0.07}>
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-md">
-                    <Photo image={c.image} sizes="(min-width:1024px) 24vw, (min-width:640px) 48vw, 94vw" />
-                  </div>
-                  <h3 className="mt-5 text-xl font-extrabold">{c.name}</h3>
-                  <p className="mt-1.5 text-[0.93rem] leading-relaxed">{c.text}</p>
-                </Reveal>
+          <ul className="mt-12 grid gap-6 md:grid-cols-3">
+            {perks.map(({ title, text, icon: Icon }) => (
+              <li key={title} className="rounded-xl border border-line bg-white px-6 py-9 text-center">
+                <span
+                  aria-hidden
+                  className="mx-auto flex h-[66px] w-[66px] items-center justify-center rounded-full bg-orange/10 text-orange"
+                >
+                  <Icon className="h-7 w-7" strokeWidth={1.75} />
+                </span>
+                <h2 className="mt-5 text-[1.2rem] font-bold">{title}</h2>
+                <p className="mx-auto mt-1.5 max-w-[16rem] text-[0.9rem] leading-relaxed text-[#6b7280]">{text}</p>
               </li>
             ))}
           </ul>
-        </Container>
-      </Section>
 
-      <FeatureSection
-        eyebrow="Rental assistance benefits"
-        title="Support that goes beyond the keys."
-        cols={3}
-        features={[
-          { icon: PlaneLanding, title: "Airport and city pickups", text: "Ask for collection at an airport or in the city, whichever suits your plans." },
-          { icon: CalendarRange, title: "Short or long term", text: "From a weekend away to an extended stay, tell us how long you need the car." },
-          { icon: UserCheck, title: "A person to talk to", text: "Questions about drivers, documents or collection are answered by our team, not a chatbot." },
-          { icon: KeyRound, title: "Clear next steps", text: "We explain what the supplier requires before you confirm anything." },
-          { icon: Timer, title: "Help if plans change", text: "Delayed flight or new dates? Contact us and we will talk through your options." },
-          { icon: ShieldQuestion, title: "Honest about what we can do", text: "If we cannot help with a request, we will tell you early." },
-        ]}
-      />
+          <section aria-labelledby="pricing-title" className="mt-20">
+            <SectionTitle eyebrow="Our Rates" title="Car Rental Pricing" id="pricing-title" />
+            <ul className="mt-9 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {rates.map((r) => (
+                <li key={r.name}>
+                  <article className="rounded-xl border border-line bg-white px-5 py-8 text-center">
+                    <span
+                      aria-hidden
+                      className="mx-auto flex h-[66px] w-[66px] items-center justify-center rounded-full bg-orange/10 text-orange"
+                    >
+                      <Car className="h-7 w-7" strokeWidth={1.75} />
+                    </span>
+                    <h3 className="mt-5 text-[1.1rem] font-bold">{r.name}</h3>
+                    <p className="text-[0.8rem] text-[#6b7280]">{r.model}</p>
+                    <p className="mt-3 text-[1.75rem] font-bold leading-tight text-orange">${r.price}</p>
+                    <p className="text-[0.8rem] text-[#6b7280]">per day</p>
+                    <Link
+                      href="/contact"
+                      className="mt-3 inline-block text-[0.9rem] text-orange hover:text-orange-deep hover:underline"
+                      aria-label={`Book now: ${r.name}`}
+                    >
+                      book now &gt;
+                    </Link>
+                  </article>
+                </li>
+              ))}
+            </ul>
+          </section>
 
-      <FaqSection items={carFaqs} title="Car rental questions" eyebrow="Car rentals FAQ" intro="Common questions about rental enquiries." id="car-faq" tone="mist" />
-      <FinalCta
-        title="Need a car waiting for you?"
-        text="Send us your pickup details, or call our team and tell us what you need."
-        image={images.carSuv}
-        primaryHref="/car-rentals#enquiry"
-        primaryLabel="Request a Rental"
-      />
+          <section
+            aria-labelledby="road-title"
+            className="mx-auto mt-16 max-w-[840px] rounded-2xl bg-navy px-6 py-12 text-center"
+          >
+            <h2 id="road-title" className="text-[1.6rem] font-bold !text-white">
+              Ready to Hit the Road?
+            </h2>
+            <p className="mt-3 text-[1rem] text-white/85">
+              Our agents are standing by to find the perfect vehicle for your trip.
+            </p>
+            <EmailCareButton className="mt-6" />
+          </section>
+        </div>
+      </div>
     </>
   );
 }

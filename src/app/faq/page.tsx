@@ -4,20 +4,19 @@ import { JsonLd } from "@/components/shared/JsonLd";
 import { PageHero } from "@/components/shared/PageHero";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { SupportBand } from "@/components/support/SupportBand";
-import { flightFaqs, generalFaqs, radioFaqs } from "@/config/faq";
+import { flightFaqs, generalFaqs } from "@/config/faq";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Frequently Asked Questions",
   description:
-    "Answers to common questions about TravelStation's flight and radio services enquiry service, and how to contact customer support.",
+    "Answers to common questions about Travel Station's flight enquiry service, and how to contact customer support.",
   path: "/faq",
 });
 
 const groups = [
   { id: "general", title: "General", items: generalFaqs },
   { id: "flights", title: "Flights", items: flightFaqs },
-  { id: "radio", title: "Radio services", items: radioFaqs },
 ];
 
 export default function FaqPage() {

@@ -3,7 +3,7 @@ import { contact } from "./contact";
 export type Faq = { q: string; a: string };
 
 /**
- * Answers describe an enquiry-based service. TravelStation does not take
+ * Answers describe an enquiry-based service. Travel Station does not take
  * payments on this website, display live fares or issue tickets online.
  */
 export const generalFaqs: Faq[] = [
@@ -48,7 +48,7 @@ export const flightFaqs: Faq[] = [
   },
   {
     q: "Are you affiliated with any airline?",
-    a: "No. TravelStation is an independent third-party travel service provider and is not affiliated with or endorsed by any airline.",
+    a: "No. Travel Station is an independent third-party travel service provider and is not affiliated with or endorsed by any airline.",
   },
   {
     q: "What details should I have ready?",
@@ -91,20 +91,5 @@ export const carFaqs: Faq[] = [
   {
     q: "What do I need to have when collecting a vehicle?",
     a: "Requirements such as driving licence, driver age and a payment card are set by the rental supplier. Our team will let you know what applies to your rental.",
-  },
-];
-
-export const radioFaqs: Faq[] = [
-  {
-    q: "Is this the official satellite radio provider?",
-    a: "No. The radio services support offered through TravelStation is an independent support service. It is not operated by, affiliated with or endorsed by any satellite radio provider.",
-  },
-  {
-    q: "What can the radio support team help with?",
-    a: "They can assist with activation questions, signal and reception troubleshooting, missing channels and subscription enquiries.",
-  },
-  {
-    q: "Will you ask for my payment card number in the form?",
-    a: "No. Never send full card details through an enquiry form. If a payment is needed for any service, our team will explain how it works before you agree to anything.",
   },
 ];

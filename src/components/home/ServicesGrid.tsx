@@ -1,4 +1,4 @@
-import { ArrowRight, Plane, Radio } from "lucide-react";
+import { ArrowRight, Plane } from "lucide-react";
 import Link from "next/link";
 import { Container, Section } from "@/components/shared/Container";
 import { Photo } from "@/components/shared/Photo";
@@ -14,14 +14,6 @@ const services = [
     icon: Plane,
     image: images.wingClouds,
     position: "70% 50%",
-  },
-  {
-    title: "Radio Services",
-    text: "Assistance with satellite radio activation, signal issues and subscriptions.",
-    href: "/radio-services",
-    icon: Radio,
-    image: images.radioMic,
-    position: "55% 50%",
   },
 ];
 

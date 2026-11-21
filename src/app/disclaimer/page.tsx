@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Disclaimer",
   description:
-    "TravelStation is an independent third-party travel service provider, not affiliated with or endorsed by any airline, hotel group or satellite radio provider.",
+    "Travel Station is an independent third-party travel service provider, not affiliated with or endorsed by any airline, hotel group or car rental provider.",
   path: "/disclaimer",
 });
 
@@ -19,20 +19,14 @@ export default function DisclaimerPage() {
         {
           heading: "No affiliation",
           body: [
-            "TravelStation is not affiliated with, endorsed by, sponsored by or officially connected to any airline, airport, hotel group, car rental company or satellite radio provider, unless a verified relationship is stated on the relevant page.",
-            "Airline, hotel, vehicle and radio brand names, logos and trademarks mentioned on this website belong to their respective owners. They are used only to identify the services customers may ask about and do not imply any relationship.",
+            "Travel Station is not affiliated with, endorsed by, sponsored by or officially connected to any airline, airport, hotel group or car rental company, unless a verified relationship is stated on the relevant page.",
+            "Airline, hotel and vehicle brand names, logos and trademarks mentioned on this website belong to their respective owners. They are used only to identify the services customers may ask about and do not imply any relationship.",
           ],
         },
         {
           heading: "Enquiry-based service",
           body: [
             "Information on this website is general and is not a quotation or an offer. We do not publish live fares, rates or availability. Nothing is booked, ticketed or reserved until our customer support team has confirmed it with you directly.",
-          ],
-        },
-        {
-          heading: "Radio services",
-          body: [
-            "Radio services support offered through this website is an independent support service. It is not the official customer service of any satellite radio provider. For official account matters you may also wish to contact your provider directly.",
           ],
         },
         {

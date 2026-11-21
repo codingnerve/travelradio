@@ -32,7 +32,7 @@ export function WhyChoose() {
       <Container>
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div className="lg:sticky lg:top-32 lg:self-start">
-            <SectionHeading eyebrow="Why TravelStation" title="Why Choose TravelStation?" id="why-title">
+            <SectionHeading eyebrow="Why Travel Station" title="Why Choose Travel Station?" id="why-title">
               Travel is easier with someone on your side. We keep the process clear and personal,
               and we tell you plainly what we can and cannot do.
             </SectionHeading>

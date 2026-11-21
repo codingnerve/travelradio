@@ -94,11 +94,11 @@ Your reference: ${d.reference}
 
 This message confirms we received your enquiry only. It is not a booking confirmation, and no tickets, reservations or rentals have been issued.
 
-If your matter is urgent, call us 24/7 on ${contact.phoneDisplay}.
+If your matter is urgent, email us at ${contact.email}.
 
 ${site.name} Customer Support
 ${contact.email}`;
-  const html = `<div style="font-family:Arial,sans-serif;color:#172D43;max-width:560px;line-height:1.55"><p>Hello ${escapeHtml(d.fullName)},</p><p>Thank you for contacting ${escapeHtml(site.name)}. We have received your ${escapeHtml(enquiryTypeLabels[d.type].toLowerCase())} and our customer support team will be in touch using the details you gave us.</p><p style="background:#FAF8F3;padding:12px 16px;border-left:3px solid #D77C42"><strong>Your reference:</strong> ${escapeHtml(d.reference)}</p><p style="color:#536170;font-size:14px">This message confirms we received your enquiry only. It is not a booking confirmation, and no tickets, reservations or rentals have been issued.</p><p>If your matter is urgent, call us 24/7 on <a href="${escapeHtml(contact.phoneHref)}">${escapeHtml(contact.phoneDisplay)}</a>.</p><p>${escapeHtml(site.name)} Customer Support<br>${escapeHtml(contact.email)}</p></div>`;
+  const html = `<div style="font-family:Arial,sans-serif;color:#172D43;max-width:560px;line-height:1.55"><p>Hello ${escapeHtml(d.fullName)},</p><p>Thank you for contacting ${escapeHtml(site.name)}. We have received your ${escapeHtml(enquiryTypeLabels[d.type].toLowerCase())} and our customer support team will be in touch using the details you gave us.</p><p style="background:#FAF8F3;padding:12px 16px;border-left:3px solid #D77C42"><strong>Your reference:</strong> ${escapeHtml(d.reference)}</p><p style="color:#536170;font-size:14px">This message confirms we received your enquiry only. It is not a booking confirmation, and no tickets, reservations or rentals have been issued.</p><p>If your matter is urgent, email us at <a href="${escapeHtml(contact.emailHref)}">${escapeHtml(contact.email)}</a>.</p><p>${escapeHtml(site.name)} Customer Support<br>${escapeHtml(contact.email)}</p></div>`;
   return { subject: `We received your enquiry — ${d.reference}`, text, html };
 }
 

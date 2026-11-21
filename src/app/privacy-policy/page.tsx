@@ -1,97 +1,84 @@
-import { LegalPage } from "@/components/shared/LegalPage";
-import { company, contact } from "@/config/contact";
+import { DocBullets, DocMeta, DocPage, DocSection, EmailLink } from "@/components/shared/DocPage";
+import { PageBanner } from "@/components/shared/PageBanner";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Privacy Policy",
-  description:
-    "How TravelStation (TravelOpedia Ltd.) collects, uses and protects the personal information you share when you submit a travel enquiry.",
+  description: "How Travel Station collects, uses and protects the personal information you share with us.",
   path: "/privacy-policy",
 });
 
 export default function PrivacyPolicyPage() {
   return (
-    <LegalPage
-      title="Privacy Policy"
-      path="/privacy-policy"
-      intro={`This policy explains how ${company.legalName}, trading as ${company.tradingName}, handles personal information when you use this website or contact our customer support team.`}
-      sections={[
-        {
-          heading: "Who we are",
-          body: [
-            `${company.legalName} (company registration no. ${company.registrationNumber}) of ${company.addressInline} is the controller of the personal information described in this policy.`,
-            `You can contact us at ${contact.email} or on ${contact.phoneDisplay}.`,
-          ],
-        },
-        {
-          heading: "Information we collect",
-          body: ["When you submit an enquiry form we collect the information you enter, which may include:"],
-          list: [
-            "your name, email address and telephone number;",
-            "trip details such as destinations, dates, number of travellers and travel class;",
-            "any booking reference, travel date and message you choose to give us;",
-            "the page you submitted the form from and basic technical data, including your browser type and a one-way hashed form of your IP address, used to prevent spam and abuse.",
-          ],
-        },
-        {
-          heading: "Information we ask you not to send",
-          body: [
-            "Please do not include payment card numbers, passwords or other highly sensitive information in enquiry forms or emails. This website does not collect payments. If a payment is ever needed, our team will explain how it works before you agree to anything.",
-          ],
-        },
-        {
-          heading: "How we use your information",
-          body: ["We use your information to:"],
-          list: [
-            "respond to your enquiry and contact you about the travel or support you asked about;",
-            "send you an acknowledgement that we received your enquiry;",
-            "help with changes, cancellations or refunds on existing bookings;",
-            "protect the website from spam, fraud and misuse; and",
-            "meet our legal and accounting obligations.",
-          ],
-        },
-        {
-          heading: "Our legal basis",
-          body: [
-            "We rely on taking steps at your request before entering into an arrangement, our legitimate interests in running and protecting our service, and, where applicable, compliance with legal obligations. Where we need your consent, we will ask for it and you may withdraw it at any time.",
-          ],
-        },
-        {
-          heading: "Who we share it with",
-          body: [
-            "We share information only where needed to deal with your enquiry or run our service. This can include travel suppliers (such as airlines, hotels and car rental companies) when you ask us to arrange something with them, and service providers who host this website, store enquiry data or deliver email on our behalf. We do not sell your personal information.",
-          ],
-        },
-        {
-          heading: "International transfers",
-          body: [
-            "Because travel is international, and some of our providers operate outside the United Kingdom, your information may be transferred abroad. Where this happens we use appropriate safeguards required by UK data protection law.",
-          ],
-        },
-        {
-          heading: "How long we keep it",
-          body: [
-            "We keep enquiry information only for as long as it is needed for the purposes above, including any period needed to handle follow-up questions, complaints and legal or accounting requirements, and then delete or anonymise it.",
-          ],
-        },
-        {
-          heading: "Cookies",
-          body: [
-            "This website does not use advertising or analytics cookies. Your browser may store technical data strictly necessary for the site to work. If we add analytics or marketing tools in future, we will update this page and ask for consent where required.",
-          ],
-        },
-        {
-          heading: "Your rights",
-          body: [
-            "Under UK data protection law you have the right to access your information, have it corrected or erased, restrict or object to its use, and receive a copy in a portable format. To exercise a right, contact us using the details above.",
-            "If you are unhappy with how we handle your information, you can complain to the Information Commissioner's Office (ico.org.uk).",
-          ],
-        },
-        {
-          heading: "Changes to this policy",
-          body: ["We may update this policy from time to time. The date at the top of the page shows when it was last changed."],
-        },
-      ]}
-    />
+    <>
+      <PageBanner title="Privacy Policy" />
+      <DocPage>
+        <DocMeta>Effective Date: February 21, 2026</DocMeta>
+        <p className="mt-4 text-[1.05rem] leading-[1.8] text-[#6b7280] sm:text-[1.15rem]">
+          At Travel Station, we are committed to protecting your privacy. This policy explains how we
+          collect and use your data.
+        </p>
+        <div className="mt-8">
+          <DocSection title="1. Information We Collect">
+            <p>We collect the following types of information:</p>
+            <DocBullets
+              items={[
+                <>
+                  <strong className="font-bold text-[#4b5563]">Personal Data:</strong> Name, Email,
+                  Phone, Passport details, Payment information.
+                </>,
+                <>
+                  <strong className="font-bold text-[#4b5563]">Non-Personal Data:</strong> IP Address,
+                  Browser type, Device information.
+                </>,
+              ]}
+            />
+          </DocSection>
+          <DocSection title="2. How We Use Your Information">
+            <p>Your data is used strictly to:</p>
+            <DocBullets
+              items={[
+                "Process and confirm flight, hotel, and car rental bookings.",
+                "Provide visa assistance and travel insurance services.",
+                "Facilitate rescheduling, name changes, or cancellations.",
+                "Respond to customer support requests.",
+                "Send essential travel updates and itinerary changes.",
+              ]}
+            />
+          </DocSection>
+          <DocSection title="3. Cookies">
+            <p>
+              We use cookies to remember your preferences and analyze website traffic. You can manage
+              cookie preferences through your browser settings.
+            </p>
+          </DocSection>
+          <DocSection title="4. Data Sharing & Third Parties">
+            <p>
+              We share your information with third-party service providers (airlines, hotels, GDS
+              systems, and payment processors) only to the extent necessary to complete your travel
+              requests. We do not sell your personal data to marketers.
+            </p>
+          </DocSection>
+          <DocSection title="5. Security">
+            <p>
+              We implement technical measures to protect your data, though no transmission over the
+              internet is 100% secure. We continuously work to safeguard your information during
+              transmission and storage.
+            </p>
+          </DocSection>
+          <DocSection title="6. Children's Privacy">
+            <p>
+              Our services are not directed toward individuals under 18. We do not knowingly collect
+              personal data from children.
+            </p>
+          </DocSection>
+          <DocSection title="7. Contact Us">
+            <p>
+              For any privacy-related inquiries, please contact us at <EmailLink />.
+            </p>
+          </DocSection>
+        </div>
+      </DocPage>
+    </>
   );
 }

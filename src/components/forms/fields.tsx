@@ -186,7 +186,7 @@ export function ConsentField({ form }: { form: AnyForm }) {
           {...form.register("consent")}
         />
         <span>
-          I agree that TravelStation may contact me about this enquiry and process my details as
+          I agree that Travel Station may contact me about this enquiry and process my details as
           described in the{" "}
           <Link href="/privacy-policy" className="font-medium text-navy underline underline-offset-2 hover:text-orange-deep">
             Privacy Policy

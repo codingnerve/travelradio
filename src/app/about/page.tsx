@@ -1,133 +1,67 @@
-import { Compass, Handshake, Headset, ListChecks } from "lucide-react";
-import { FeatureSection, Split } from "@/components/shared/Blocks";
-import { ButtonLink } from "@/components/shared/Button";
-import { Container, Section } from "@/components/shared/Container";
-import { PageHero } from "@/components/shared/PageHero";
-import { SectionHeading } from "@/components/shared/SectionHeading";
-import { FinalCta } from "@/components/support/FinalCta";
-import { company, contact } from "@/config/contact";
-import { images } from "@/config/images";
+import { Briefcase, Building2, Car, Globe, Plane, Shield, type LucideIcon } from "lucide-react";
+import { EmailCareButton } from "@/components/shared/EmailCareButton";
+import { PageBanner } from "@/components/shared/PageBanner";
+import { DocPage, docBody } from "@/components/shared/DocPage";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "About Us",
   description:
-    "TravelStation is an independent travel assistance service for flights and booking support, operated by TravelOpedia Ltd.",
+    "Travel Station is a UK-based travel company dedicated to making global travel simple, affordable, and stress-free.",
   path: "/about",
 });
+
+const services: { title: string; text: string; icon: LucideIcon }[] = [
+  { title: "Flight Bookings", text: "International & Domestic Flight Bookings at competitive prices.", icon: Plane },
+  { title: "Hotel Reservations", text: "Hotel Reservations Worldwide for every budget and style.", icon: Building2 },
+  { title: "Holiday Packages", text: "Curated Holiday & Tour Packages for unforgettable experiences.", icon: Globe },
+  { title: "Visa Assistance", text: "Expert Visa Assistance to simplify your travel paperwork.", icon: Shield },
+  { title: "Travel Insurance", text: "Comprehensive Travel Insurance for peace of mind.", icon: Car },
+  { title: "Corporate Travel", text: "Corporate Travel Management solutions for businesses.", icon: Briefcase },
+];
 
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        eyebrow="About us"
-        title="A travel assistance partner that stays on the line."
-        image={images.traveller}
-        imagePosition="50% 40%"
-        crumbs={[{ label: "About Us" }]}
-      >
-        TravelStation helps people with the practical side of travel: flights
-        and support when plans change.
-      </PageHero>
-
-      <Split
-        eyebrow="Who we are"
-        title="Independent, enquiry-led and personal."
-        image={images.mapFlatlay}
-        tone="white"
-        actions={<ButtonLink href="/contact" variant="secondary">Get in touch</ButtonLink>}
-      >
-        <p>
-          TravelStation is an independent travel service provider. We help travellers explore
-          options for flights, and we support people who need help with an
-          existing booking.
+      <PageBanner title="About Us" />
+      <DocPage>
+        <h2 className="text-[1.9rem] font-bold sm:text-[2.15rem]">Travel Station – Your Trusted UK Travel Partner</h2>
+        <p className={`mt-4 ${docBody}`}>
+          Welcome to Travel Station, a UK-based travel company dedicated to making global travel
+          simple, affordable, and stress-free. We specialize in providing complete travel solutions
+          tailored to the unique needs of our clients.
         </p>
-        <p>
-          We work through enquiries. You tell us what you need, a member of our customer support
-          team gets in touch, and nothing is arranged until you have agreed it with them.
-        </p>
-      </Split>
 
-      <FeatureSection
-        tone="ivory"
-        eyebrow="Our philosophy"
-        title="How we think about travel assistance."
-        cols={3}
-        features={[
-          { icon: Compass, title: "Start with the traveller", text: "Good plans begin with your dates, your company and your preferences, so we begin there too." },
-          { icon: Handshake, title: "Say what we can do", text: "We are clear about how our service works, and we do not promise what we cannot deliver." },
-          { icon: ListChecks, title: "Keep it practical", text: "We focus on the details that make a trip run smoothly, from flights and stays to the drive from the airport." },
-        ]}
-      />
+        <h3 className="mt-9 text-[1.4rem] font-bold">Our Services</h3>
+        <ul className="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map(({ title, text, icon: Icon }) => (
+            <li key={title} className="rounded-2xl bg-mist px-6 py-10 text-center">
+              <span
+                aria-hidden
+                className="mx-auto flex h-[66px] w-[66px] items-center justify-center rounded-xl bg-orange/10 text-orange"
+              >
+                <Icon className="h-7 w-7" strokeWidth={1.75} />
+              </span>
+              <h4 className="mt-5 text-[1.1rem] font-bold">{title}</h4>
+              <p className="mt-1.5 text-[0.9rem] leading-relaxed text-[#6b7280]">{text}</p>
+            </li>
+          ))}
+        </ul>
 
-      <Section labelledBy="about-services">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-            <SectionHeading eyebrow="What we do" title="Services at a glance." id="about-services" />
-            <dl className="divide-y divide-line border-y border-line">
-              {[
-                ["Flights", "Domestic and international flight booking assistance, plus help with changes and cancellations."],
-                ["Travel assistance", "Help with existing bookings, including date changes, refunds and passenger detail corrections."],
-                ["Radio services", "Independent support for satellite radio activation, signal and subscriptions."],
-              ].map(([t, d]) => (
-                <div key={t} className="grid gap-1 py-5 sm:grid-cols-[10rem_1fr] sm:gap-8">
-                  <dt className="font-display font-extrabold text-navy">{t}</dt>
-                  <dd>{d}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </Container>
-      </Section>
+        <section className="mt-6 rounded-2xl bg-mist p-7 sm:p-9">
+          <h3 className="text-[1.4rem] font-bold">Our Mission</h3>
+          <p className={`mt-3 ${docBody}`}>
+            To provide transparent pricing, reliable booking support, and exceptional customer
+            service. We believe every journey should begin with confidence and ease, and we work
+            tirelessly to ensure our clients receive the best value and support at every step.
+          </p>
+        </section>
 
-      <Split
-        eyebrow="Customer support approach"
-        title="A real person, around the clock."
-        image={images.support}
-        flip
-        tone="mist"
-        actions={<ButtonLink href={contact.phoneHref}>Call {contact.phoneDisplay}</ButtonLink>}
-      >
-        <p>
-          Our telephone support line is available 24/7, because travel does not keep office hours.
-          Online enquiries are reviewed by the customer support team and answered as soon as
-          possible.
-        </p>
-        <p>
-          We aim to explain things plainly: what the options are, what depends on the supplier, and
-          what happens next.
-        </p>
-      </Split>
-
-      <Section tone="navy" labelledBy="company-info">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-            <SectionHeading eyebrow="Company information" title="Who is behind TravelStation." id="company-info" light />
-            <dl className="grid gap-x-10 gap-y-6 sm:grid-cols-2">
-              {[
-                ["Trading name", company.tradingName],
-                ["Legal entity", company.legalName],
-                ["Company registration no.", company.registrationNumber],
-                ["VAT no.", company.vatNumber],
-                ["Registered address", company.addressInline],
-                ["Customer support", `${contact.phoneDisplay} · ${contact.email}`],
-              ].map(([k, v]) => (
-                <div key={k} className="border-t border-white/15 pt-4">
-                  <dt className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-orange">{k}</dt>
-                  <dd className="mt-1.5 text-white">{v}</dd>
-                </div>
-              ))}
-              <div className="flex items-start gap-3 border-t border-white/15 pt-4 text-sm text-white/70 sm:col-span-2">
-                <Headset className="mt-0.5 h-4 w-4 shrink-0 text-orange" aria-hidden />
-                TravelStation is an independent third-party travel service provider and is not
-                affiliated with or endorsed by any airline unless a verified relationship is stated.
-              </div>
-            </dl>
-          </div>
-        </Container>
-      </Section>
-
-      <FinalCta />
+        <div className="mt-6 rounded-2xl bg-orange/10 px-6 py-7 text-center">
+          <p className="font-medium text-navy">Ready to plan your next trip?</p>
+          <EmailCareButton className="mt-4" />
+        </div>
+      </DocPage>
     </>
   );
 }

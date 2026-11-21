@@ -18,7 +18,7 @@ export default function NotFound() {
           <h1 className="mt-5 text-4xl font-extrabold sm:text-5xl">This destination doesn&apos;t exist.</h1>
           <p className="mt-5 text-lg">
             The page you were looking for may have moved. Head back to the start, or speak to our
-            team on {contact.phoneDisplay}.
+            team at {contact.email}.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <ButtonLink href="/" size="lg">Back to Home</ButtonLink>

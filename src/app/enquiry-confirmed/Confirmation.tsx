@@ -1,6 +1,6 @@
 "use client";
 
-import { Clock, Mail, Phone } from "lucide-react";
+import { Mail } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { ButtonLink } from "@/components/shared/Button";
@@ -38,15 +38,9 @@ function Inner() {
         </li>
       </ol>
 
-      <div className="mt-10 grid gap-3 rounded-md bg-ivory p-5 text-sm sm:grid-cols-3">
-        <p className="flex items-center gap-2 font-semibold text-navy">
-          <Clock className="h-4 w-4 text-teal" aria-hidden /> 24/7 Support
-        </p>
-        <a href={contact.phoneHref} className="flex items-center gap-2 font-semibold text-navy hover:text-orange-deep">
-          <Phone className="h-4 w-4 text-teal" aria-hidden /> {contact.phoneDisplay}
-        </a>
+      <div className="mt-10 rounded-lg bg-mist p-5 text-sm">
         <a href={contact.emailHref} className="flex items-center gap-2 break-all font-semibold text-navy hover:text-orange-deep">
-          <Mail className="h-4 w-4 shrink-0 text-teal" aria-hidden /> {contact.email}
+          <Mail className="h-4 w-4 shrink-0 text-orange" aria-hidden /> {contact.email}
         </a>
       </div>
 
