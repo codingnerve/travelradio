@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { FeaturedHotels } from "@/components/landing/FeaturedHotels";
-import { KeyBenefits } from "@/components/landing/KeyBenefits";
 import { LandingHero } from "@/components/landing/LandingHero";
-import { PopularDestinations } from "@/components/landing/PopularDestinations";
 import { RadioContact } from "@/components/landing/RadioContact";
 import { RadioHelpline } from "@/components/landing/RadioHelpline";
+import { RadioHero } from "@/components/landing/RadioHero";
 import { RadioSupport } from "@/components/landing/RadioSupport";
-import { ReadyToTravel } from "@/components/landing/ReadyToTravel";
-import { TravelSolutions } from "@/components/landing/TravelSolutions";
+import { SignalBand } from "@/components/landing/SignalBand";
 import { site } from "@/config/site";
+
+// Hidden for now (components kept in src/components/landing): PopularDestinations,
+// FeaturedHotels, TravelSolutions, KeyBenefits, ReadyToTravel. Re-add them here to bring them back.
 
 export const metadata: Metadata = {
   title: { absolute: `${site.name} World — ${site.tagline}` },
@@ -20,11 +20,8 @@ export default function HomePage() {
   return (
     <>
       <LandingHero />
-      <PopularDestinations />
-      <FeaturedHotels />
-      <TravelSolutions />
-      <KeyBenefits />
-      <ReadyToTravel />
+      <RadioHero />
+      <SignalBand />
       <RadioSupport />
       <RadioHelpline />
       <RadioContact />

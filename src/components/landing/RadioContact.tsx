@@ -1,6 +1,9 @@
 import { company, contact } from "@/config/contact";
-import { site } from "@/config/site";
 import { eyebrowGradient } from "./RadioSupport";
+
+/** Radio support brand and inbox, as on the original radio site. */
+const radioBrand = "RadioTuneAssist";
+const radioEmail = "radioservices@travelstation.world";
 
 const label = "text-[0.75rem] font-medium uppercase tracking-[0.04em] text-[#6b7280]";
 const card = "rounded-xl border-2 border-[#d9d9d9] bg-white/60 px-5 py-4";
@@ -13,7 +16,7 @@ export function RadioContact() {
           Contact Information
         </p>
         <h2 id="radio-contact-title" className="!font-sans mt-1 text-[2rem] font-bold leading-tight sm:text-[2.3rem]">
-          {site.name}
+          {radioBrand}
         </h2>
         <p className="mt-2 text-[0.85rem] text-[#2a3150]">An independent car satellite radio support service</p>
 
@@ -33,10 +36,10 @@ export function RadioContact() {
           <div className={card}>
             <p className={label}>Customer Service</p>
             <a
-              href={contact.emailHref}
+              href={`mailto:${radioEmail}`}
               className="mt-2 block break-all text-[0.8rem] text-[#2a3150] hover:text-orange"
             >
-              {contact.email}
+              {radioEmail}
             </a>
           </div>
           <div className={card}>
