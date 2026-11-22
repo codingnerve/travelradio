@@ -16,9 +16,6 @@ export function LandingHero() {
           <span className="block text-[1.5rem] font-bold uppercase tracking-[0.09em] text-white sm:text-[2.25rem] lg:text-[2.75rem]">
             Travel Station World
           </span>
-          <span className="mt-4 block text-[2.1rem] font-bold leading-[1.1] text-white sm:text-[3.25rem] lg:mt-6 lg:text-[4.7rem]">
-            Your Concierge Desk for Travel Services
-          </span>
         </h1>
         <p className="mx-auto mt-6 max-w-[52rem] text-[1.05rem] leading-relaxed text-white sm:text-[1.45rem]">
           We provide independent research, itinerary planning, and concierge advisory only. We do not
