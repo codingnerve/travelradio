@@ -11,7 +11,12 @@ export function LandingHero() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a2b3c]/70 via-[#8a4b22]/35 to-[#1a2b3c]/85" />
       </div>
 
-      <div className="mx-auto max-w-[1440px] px-4 pb-24 pt-20 text-center sm:px-8 lg:pb-[150px] lg:pt-[160px]">
+      <p className="border-b border-white/15 bg-[#1a2b3c]/70 px-4 py-3 text-center text-[0.8rem] font-semibold leading-snug text-white sm:px-8 sm:text-[0.9rem]">
+        We provide independent research, itinerary planning, and concierge advisory only. We do not
+        sell, issue, or hold funds for airline tickets, hotel rooms, or vehicle rentals.
+      </p>
+
+      <div className="mx-auto max-w-[1440px] px-4 pb-24 pt-16 text-center sm:px-8 lg:pb-[150px] lg:pt-[130px]">
         <h1 id="hero-title">
           <span className="block text-[1.5rem] font-bold uppercase tracking-[0.09em] text-white sm:text-[2.25rem] lg:text-[2.75rem]">
             Travel Station World

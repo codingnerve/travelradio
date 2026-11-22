@@ -104,6 +104,12 @@ export function Footer() {
         </div>
       </div>
       </div>
+
+      <div className="border-t border-white/10 bg-[#2f4456]">
+        <p className="mx-auto max-w-[1280px] px-4 py-3 text-center text-[0.8rem] font-semibold tracking-wide text-white/90 sm:px-8">
+          A Global Relocation, Expats &amp; Lifestyle Advisory / Itinerary Consulting service
+        </p>
+      </div>
     </footer>
   );
 }
