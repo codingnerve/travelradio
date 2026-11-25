@@ -1,6 +1,6 @@
 import { Mail } from "lucide-react";
 import Link from "next/link";
-import { contact } from "@/config/contact";
+import { company, contact } from "@/config/contact";
 import { footerImportantLinks, footerQuickLinks, site, socialLinks, type NavItem } from "@/config/site";
 import { Logo } from "./Logo";
 import { SocialIcon } from "./SocialIcon";
@@ -103,6 +103,12 @@ export function Footer() {
           ))}
         </div>
       </div>
+      </div>
+
+      <div className="border-t border-white/10">
+        <p className="mx-auto max-w-[1280px] px-4 py-3 text-center text-[0.76rem] leading-relaxed text-white/80 sm:px-8">
+          {company.legalName} · Company Number {company.registrationNumber} · {company.addressInline}
+        </p>
       </div>
 
       <div className="border-t border-white/10 bg-[#2f4456]">

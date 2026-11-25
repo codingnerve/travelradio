@@ -27,15 +27,14 @@ export const contact = {
 } as const;
 
 export const company = {
-  legalName: "TravelOpedia Ltd.",
+  legalName: "Travel Station Ltd",
   tradingName: "Travel Station",
-  registrationNumber: "08168135",
-  vatNumber: "199172856",
+  registrationNumber: "17044528",
   addressLines: [
-    "2nd Floor, 7 Mackenzie Street",
-    "Slough – SL1 1XQ",
+    "61 Blandford Waye",
+    "Hayes, Middlesex UB4 0PB",
     "United Kingdom",
   ],
-  addressInline: "2nd Floor, 7 Mackenzie Street, Slough – SL1 1XQ, United Kingdom",
+  addressInline: "61 Blandford Waye, Hayes, Middlesex UB4 0PB, United Kingdom",
   copyrightYear: 2026,
 } as const;

@@ -5,7 +5,18 @@ import { Eyebrow } from "./SectionHeading";
 import { company, contact } from "@/config/contact";
 import { legalLinks } from "@/config/site";
 
-export type LegalSection = { heading: string; body: string[]; list?: string[] };
+/** `after` paragraphs render below the list. Wrap text in **double asterisks** to bold it. */
+export type LegalSection = { heading: string; body: string[]; list?: string[]; after?: string[] };
+
+function Inline({ text }: { text: string }) {
+  return (
+    <>
+      {text.split("**").map((part, i) =>
+        i % 2 === 1 ? <strong key={i}>{part}</strong> : part,
+      )}
+    </>
+  );
+}
 
 export const LEGAL_UPDATED = "20 November 2026";
 
@@ -66,23 +77,30 @@ export function LegalPage({
                   </h2>
                   {s.body.map((p) => (
                     <p key={p} className="mt-3 leading-relaxed">
-                      {p}
+                      <Inline text={p} />
                     </p>
                   ))}
                   {s.list && (
                     <ul className="mt-3 list-disc space-y-1.5 pl-6 leading-relaxed marker:text-orange">
                       {s.list.map((li) => (
-                        <li key={li}>{li}</li>
+                        <li key={li}>
+                          <Inline text={li} />
+                        </li>
                       ))}
                     </ul>
                   )}
+                  {s.after?.map((p) => (
+                    <p key={p} className="mt-3 leading-relaxed">
+                      <Inline text={p} />
+                    </p>
+                  ))}
                 </section>
               ))}
 
               <section className="mt-12 rounded-md bg-ivory p-6" aria-label="Contact about this policy">
                 <h2 className="text-lg font-extrabold">Questions about this page?</h2>
                 <p className="mt-2 text-[0.95rem]">
-                  Contact {company.legalName} (trading as {company.tradingName}) at{" "}
+                  Contact {company.legalName} at{" "}
                   <a href={contact.emailHref} className="font-semibold text-navy underline underline-offset-2">
                     {contact.email}
                   </a>{" "}

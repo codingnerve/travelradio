@@ -1,80 +1,76 @@
-import { DocPage, docBody } from "@/components/shared/DocPage";
-import { EmailCareButton } from "@/components/shared/EmailCareButton";
-import { PageBanner } from "@/components/shared/PageBanner";
+import { LegalPage } from "@/components/shared/LegalPage";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Refund & Cancellation",
-  description: "How refunds and cancellations are handled by Travel Station, including supplier rules and timelines.",
+  title: "Refund, Cancellation & Service Policy",
+  description:
+    "Our independent concierge service, one-time service fees, cancellation terms, 14-day satisfaction guarantee and how to request a refund.",
   path: "/refund-policy",
 });
 
-const sections = [
-  {
-    title: "Intermediary Role",
-    text: "Travel Station acts as an intermediary between clients and service providers (airlines, hotels, tour operators). Refunds depend on the policies of these providers and are subject to their terms and conditions.",
-  },
-  {
-    title: "Flights",
-    text: "Flight refunds are subject to airline fare rules. Some tickets are non-refundable. Our service fees are non-refundable once booking is confirmed. Please review your ticket's terms before requesting a cancellation.",
-  },
-  {
-    title: "Visa Fees",
-    text: "Embassy fees and our service charges for visa assistance are non-refundable once processing begins, regardless of the outcome of the visa application.",
-  },
-  {
-    title: "Refund Timeline",
-    text: "Airline refunds typically take 7–30 working days to process and reflect in your account. The exact timeline depends on the airline and your payment provider.",
-  },
-];
-
-const notes = [
-  "All refund requests must be submitted to Travel Station in writing via email.",
-  "Refunds are processed only after approval from the respective airline, hotel, or service provider.",
-  "Our service fees and processing charges are non-refundable.",
-  "Travel Station is not liable for delays in refund processing by third-party providers.",
-  "Waivers may be secured from time to time from airlines or suppliers to process special refund requests.",
-];
-
 export default function RefundPolicyPage() {
   return (
-    <>
-      <PageBanner title="Refund & Cancellation" />
-      <DocPage>
-        <h2 className="text-[1.9rem] font-bold sm:text-[2.15rem]">Refund and Cancellation Policy</h2>
-        <div className="mt-6 space-y-7">
-          {sections.map((s) => (
-            <section key={s.title}>
-              <h3 className="text-[1.3rem] font-bold sm:text-[1.4rem]">{s.title}</h3>
-              <p className={`mt-2 ${docBody}`}>{s.text}</p>
-            </section>
-          ))}
-          <section>
-            <h3 className="text-[1.3rem] font-bold sm:text-[1.4rem]">No-Show Policy</h3>
-            <p className={`mt-2 ${docBody} font-medium text-[#4b5563]`}>
-              Failure to show up for a booked service (no-show) may result in 100% cancellation
-              charges as per the provider&apos;s policy.
-            </p>
-          </section>
-        </div>
-
-        <aside className="mt-9 rounded-2xl bg-mist p-7 sm:p-9">
-          <h3 className="text-[1.3rem] font-bold">Important Notes</h3>
-          <ul className={`mt-4 space-y-2.5 text-[1rem] text-[#6b7280] sm:text-[1.05rem]`}>
-            {notes.map((n) => (
-              <li key={n} className="flex gap-3">
-                <span aria-hidden className="mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full bg-orange" />
-                <span>{n}</span>
-              </li>
-            ))}
-          </ul>
-        </aside>
-
-        <div className="mt-6 rounded-2xl bg-orange/10 px-6 py-7 text-center">
-          <p className="font-medium text-navy">Questions about your refund? Contact us.</p>
-          <EmailCareButton className="mt-4" />
-        </div>
-      </DocPage>
-    </>
+    <LegalPage
+      title="Refund, Cancellation & Service Policy"
+      path="/refund-policy"
+      intro="This policy explains the scope of our service fees, when you can cancel, and when you are eligible for a refund."
+      sections={[
+        {
+          heading: "Independent Service & Non-Affiliation Notice",
+          body: [
+            "TRAVELSTATION LTD (“Company,” “we,” “our,” or “us”) operates an independent personal concierge, technical setup, and subscription management assistance service. We are an independent third-party service provider and are not affiliated with, authorized by, endorsed by, or sponsored by SiriusXM or any other third-party media, telecom, or hardware provider.",
+            "Any product names, logos, and brands mentioned during our consultations are the property of their respective owners and are used strictly for identification purposes. Customers can contact official service providers directly for standard account support at no additional concierge fee.",
+          ],
+        },
+        {
+          heading: "Scope of Fees",
+          body: [
+            "All payments collected by TRAVELSTATION LTD are strictly one-time service and consultation fees for hands-on concierge assistance, technical setup, account configuration, and dedicated agent time.",
+          ],
+          list: [
+            "Our service fees are separate from, and do not include, any recurring subscription charges, hardware costs, or plan fees billed directly by third-party providers.",
+            "By engaging our service, you acknowledge that you are paying for professional concierge time and technical assistance.",
+          ],
+        },
+        {
+          heading: "Cancellation Policy",
+          body: [],
+          list: [
+            "**Before Service Begins:** You may cancel your service request at any time prior to the start of your scheduled consultation or technical setup session for a 100% full refund, with no cancellation penalty.",
+            "**During Active Consultation:** If you choose to terminate a live session before completion, any refund will be calculated on a pro-rata basis depending on the time and technical work already performed, minus a standard administrative fee of [$25 / 10%].",
+            "**No Recurring Billing:** Our concierge fees are one-time charges per service request. You will never be enrolled in an automatic recurring billing plan by TRAVELSTATION LTD without a separate, explicitly signed written authorization.",
+          ],
+        },
+        {
+          heading: "Refund Policy",
+          body: [
+            "We stand behind our concierge assistance and offer a clear 14-Day Satisfaction & Resolution Guarantee:",
+            "**Full Refund (100%):** You are eligible for a full refund within 14 calendar days of payment if:",
+          ],
+          list: [
+            "Our team is unable to complete the agreed-upon technical setup, activation assistance, or troubleshooting scope outlined in your Service Authorization.",
+            "You were billed in error or without a completed Service Authorization Form.",
+          ],
+          after: [
+            "**Partial Refund:** If a multi-device or multi-step concierge package is partially completed and you opt not to proceed with the remaining items, a partial refund will be issued for the uncompleted portion of the service.",
+            "**Non-Refundable Circumstances:** Refunds will not be issued once the agreed-upon concierge setup or troubleshooting task has been successfully completed and verified with you during your session, or for issues caused by third-party provider outages, hardware defects, or changes made to your account after our session concludes.",
+          ],
+        },
+        {
+          heading: "How to Request a Cancellation or Refund",
+          body: [
+            "To avoid delays, please contact our billing support desk directly before initiating a payment dispute with your card issuer:",
+          ],
+          list: [
+            "**Email:** radioservices@travelstation.world / customercare@travelstation.world",
+            "**Phone:** +1 (855) 470-0315",
+            "**Required Details:** Include your full name, order/invoice number, date of service, and a brief reason for your request.",
+          ],
+          after: [
+            "**Processing Timeline:** All refund requests are reviewed within 2 business days. Approved refunds are credited back to your original payment method within 5 to 10 business days, depending on your bank or card issuer's processing times.",
+          ],
+        },
+      ]}
+    />
   );
 }

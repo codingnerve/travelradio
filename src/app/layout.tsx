@@ -59,12 +59,12 @@ const organizationLd = {
       legalName: company.legalName,
       url: site.url,
       email: contact.email,
-      vatID: company.vatNumber,
       address: {
         "@type": "PostalAddress",
-        streetAddress: "2nd Floor, 7 Mackenzie Street",
-        addressLocality: "Slough",
-        postalCode: "SL1 1XQ",
+        streetAddress: "61 Blandford Waye",
+        addressLocality: "Hayes",
+        addressRegion: "Middlesex",
+        postalCode: "UB4 0PB",
         addressCountry: "GB",
       },
       contactPoint: {
